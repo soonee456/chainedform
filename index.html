@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pure CSS Dynamic Custom List Style</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/all.min.js" ></script>
+    <script src="./js/jquery-3.5.1.min.js" ></script>
+    <script type="text/javascript" src="./js/common.js"></script>        
+</head>
+<body>
+  <div id="wrap">
+    <header>
+      <h1>Chained Form Generator</h1>
+      <div class="how">
+        <p>Choose control item &amp; Related item in Generator Tab,</p>
+        <p>Or Choose sample what you want in Sample Tab.</p>
+      </div>
+    </header>
+    <h2>Generator</h2>
+    <div class="main">
+      <div class="left">
+        <table class="item_table">
+          <colgroup>
+            <col width="110px">
+            <col width="30px">
+            <col width="110px">
+          </colgroup>
+          <thead>
+            <tr>
+              <th>Control Item</th>
+              <th></th>
+              <th>Related Item</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="c_items">
+                <input type="radio" id="c_item1" name="c_item" value="checkbox">
+                <label class="label" for="c_item1">checkbox</label>
+                <input type="radio" id="c_item2" name="c_item" value="input">
+                <label class="label" for="c_item2">input</label>
+                <input type="radio" id="c_item3" name="c_item" value="radio">
+                <label class="label" for="c_item3">radio</label>
+                <input type="radio" id="c_item4" name="c_item" value="select">
+                <label class="label" for="c_item4">select</label>
+                <input type="radio" id="c_item5" name="c_item" value="textarea">
+                <label class="label" for="c_item5">textarea</label>
+              </td>
+              <td><strong>+</strong></td>
+              <td class="t_items">
+                <input type="radio" id="t_item1" name="t_item" value="checkbox">
+                <label class="label" for="t_item1">checkbox</label>
+                <input type="radio" id="t_item2" name="t_item" value="input">
+                <label class="label" for="t_item2">input</label>
+                <input type="radio" id="t_item3" name="t_item" value="radio">
+                <label class="label" for="t_item3">radio</label>
+                <input type="radio" id="t_item4" name="t_item" value="select">
+                <label class="label" for="t_item4">select</label>
+                <input type="radio" id="t_item5" name="t_item" value="textarea">
+                <label class="label" for="t_item5">textarea</label>
+              </td>
+            </tr>         
+          </tbody>
+        </table>      
+      </div>
+      <div class="right">
+        <div id="demo_template">
+          <div class="element">  
+            <div class="triggers">
+              <input type="checkbox" id="demo_checkbox" class="trigger">
+              <label class="label" for="demo_checkbox">active</label>
+            </div>
+            <div class="targets">
+              <input type="text" class="target" disabled>
+            </div>
+          </div>  
+        </div>
+        <div class="btns">
+          <button class="btn_source">View Source</button>
+          <button class="btn_download">↓ Download</button>
+        </div>      
+      </div>
+    </div>
+    <h2>Sample</h2>
+    <div class="templates">      
+      <section class="template type1">
+        <h3>[type1] chechbox + input</h3>
+        <button class="btn_download2">↓ Download</button>
+        <div class="cont">
+          <div class="element">  
+            <div class="triggers">
+              <input type="checkbox" id="checkbox1" class="trigger">
+              <label class="label" for="checkbox1">active</label>
+            </div>
+            <div class="targets">
+              <input type="text" class="target" disabled>
+            </div>
+          </div>        
+        </div>
+      </section>
+      <section class="template type2">  
+        <h3>[type2] chechbox + chechbox</h3>
+        <div class="cont">
+          <div class="element">  
+            <div class="triggers">
+              <input type="checkbox" id="checkbox2-1" class="trigger">
+              <label class="label" for="checkbox2-1">active</label>
+            </div>
+            <div class="targets">
+              <input type="checkbox" class="target" id="checkbox2-2" disabled>
+              <label class="label" for="checkbox2-2">target</label>
+            </div>
+          </div>        
+        </div>
+      </section>
+      <section class="template type3">
+        <h3>[type3] chechbox + radio</h3>
+        <div class="cont">
+          <div class="element">   
+            <div class="triggers">
+              <input type="checkbox" id="checkbox3" class="trigger">
+              <label class="label" for="checkbox3">active</label>
+            </div>
+            <div class="targets">          
+              <input type="radio" name="type3" id="radio3_1" class="target" disabled>
+              <label class="label" for="radio3_1">active</label>
+              <input type="radio" name="type3" id="radio3_2" class="target" disabled>
+              <label class="label" for="radio3_2">none active</label>
+            </div>
+          </div>        
+        </div>
+      </section>
+      <section class="template type4">
+        <h3>[type4] chechbox + select</h3>
+        <div class="cont">
+          <div class="element">   
+            <div class="triggers">
+              <input type="checkbox" id="checkbox4" class="trigger">
+              <label class="label" for="checkbox4">active</label>
+            </div>
+            <div class="targets">            
+              <select class="select target" disabled>
+                <option>option 1</option>
+                <option>option 2</option>
+                <option>option 3</option>
+              </select>
+            </div>
+          </div>        
+        </div>
+      </section>
+      <section class="template type5">
+        <h3>[type5] chechbox + textarea</h3>
+        <div class="cont">
+          <div class="element">   
+            <div class="triggers">
+              <input type="checkbox" id="checkbox5" class="trigger">
+              <label class="label" for="checkbox5">active</label>
+            </div>
+            <div class="targets">            
+              <textarea class="target" disabled></textarea>
+            </div>
+          </div>        
+        </div>
+      </section>
+      <section class="template">
+      </section>
+      <section class="template type6">
+        <h3>[type6] radio + input</h3>
+        <div class="cont">
+          <div class="element">
+            <div class="triggers">
+              <input type="radio" id="radio6-1" name="radio6">
+              <label class="label" for="radio6-1">none active</label>
+              <input type="radio" id="radio6-2" name="radio6" class="trigger">
+              <label class="label" for="radio6-2">active</label>
+            </div>
+            <div class="targets">
+              <input type="text" class="target" disabled>
+            </div>
+          </div>        
+        </div>
+      </section>
+      <section class="template type7">
+        <h3>[type7] radio + checkbox</h3>
+        <div class="cont">
+          <div class="element">
+            <div class="triggers">
+              <input type="radio" id="radio7-1" name="radio7">
+              <label class="label" for="radio7-1">none active</label>
+              <input type="radio" id="radio7-2" name="radio7" class="trigger">
+              <label class="label" for="radio7-2">active</label>
+            </div>
+            <div class="targets">
+              <input type="checkbox" id="checkbox7" class="target" disabled>
+              <label class="label" for="checkbox7">checkbox</label>
+            </div>
+          </div>        
+        </div>
+      </section>
+      <section class="template type8">
+        <h3>[type8] radio + radio</h3>
+        <div class="cont">
+          <div class="element">
+            <div class="triggers">
+              <input type="radio" id="radio8-1" name="radio8">
+              <label class="label" for="radio8-1">none active</label>
+              <input type="radio" id="radio8-2" name="radio8" class="trigger">
+              <label class="label" for="radio8-2">active</label>
+            </div>
+            <div class="targets">
+              <input type="radio" id="checkbox8-3" class="target" disabled>
+              <label class="label" for="checkbox8-3">radio</label>
+              <input type="radio" id="checkbox8-4" class="target" disabled>
+              <label class="label" for="checkbox8-4">radio</label>
+            </div>          
+          </div>        
+        </div>
+      </section>
+      <section class="template type9">
+        <h3>[type9] radio + select</h3>
+        <div class="cont">
+          <div class="element">
+            <div class="triggers">
+              <input type="radio" id="radio9-1" name="radio9">
+              <label class="label" for="radio9-1">none active</label>
+              <input type="radio" id="radio9-2" name="radio9" class="trigger">
+              <label class="label" for="radio9-2">active</label>
+            </div>
+            <div class="targets">
+              <select class="select target">
+                <option>option 1</option>
+                <option>option 2</option>
+                <option>option 3</option>
+              </select>
+            </div>          
+          </div>        
+        </div>
+      </section>
+      <section class="template type10">
+        <h3>[type10] radio + textarea</h3>
+        <div class="cont">
+          <div class="element">
+            <div class="triggers">
+              <input type="radio" id="radio10-1" name="radio10">
+              <label class="label" for="radio10-1">none active</label>
+              <input type="radio" id="radio10-2" name="radio10" class="trigger">
+              <label class="label" for="radio10-2">active</label>
+            </div>
+            <div class="targets">
+              <textarea class="target" disabled></textarea>
+            </div>          
+          </div>        
+        </div>
+      </section>
+      <section class="template">
+      </section>
+      <section class="template type11">
+        <h3>[type11] select + input</h3>
+        <div class="cont">
+          <div class="element">
+            <div class="triggers">
+              <select class="select">
+                <option>option 1</option>
+                <option>option 2</option>
+                <option class="active">active</option>
+              </select>
+            </div>
+            <div class="targets">
+              <input type="text" class="target" disabled>
+            </div>          
+          </div>        
+        </div>
+      </section>
+      <section class="template type12">
+        <h3>[type12] select + checkbox</h3>
+        <div class="cont">
+          <div class="element">
+            <div class="triggers">
+              <select class="select">
+                <option>option 1</option>
+                <option>option 2</option>
+                <option class="active">active</option>
+              </select>
+            </div>
+            <div class="targets">
+              <input type="checkbox" id="checkbox12" class="target" disabled>
+              <label class="label" for="checkbox12">checkbox</label>
+            </div>          
+          </div>        
+        </div>
+      </section>
+      <section class="template type13">
+        <h3>[type13] select + radio</h3>
+        <div class="cont">
+          <div class="element">
+            <div class="triggers">
+              <select class="select">
+                <option>option 1</option>
+                <option>option 2</option>
+                <option class="active">active</option>
+              </select>
+            </div>
+            <div class="targets">
+              <input type="radio" id="radio13" class="target" disabled>
+              <label class="label" for="radio13">radio</label>
+            </div>          
+          </div>        
+        </div>
+      </section>
+      <section class="template type14">
+        <h3>[type14] select + select</h3>
+        <div class="cont">
+          <div class="element">
+            <div class="triggers">
+              <select class="select">
+                <option>option 1</option>
+                <option>option 2</option>
+                <option class="active">active</option>
+              </select>
+            </div>
+            <div class="targets">
+              <select class="select target" disabled>
+                <option>option 1</option>
+                <option>option 2</option>
+                <option>option 3</option>
+              </select>
+            </div>          
+          </div>        
+        </div>
+      </section>
+      <section class="template type15">
+        <h3>[type15] select + textarea</h3>
+        <div class="cont">
+          <div class="element">
+            <div class="triggers">
+              <select class="select">
+                <option>option 1</option>
+                <option>option 2</option>
+                <option class="active">active</option>
+              </select>
+            </div>
+            <div class="targets">
+              <textarea class="target" disabled></textarea>
+            </div>          
+          </div>        
+        </div>
+      </section>
+      <section class="template">
+      </section>
+      <section class="template type16">
+        <h3>[type16] input + input</h3>
+        <div class="cont">
+          <div class="element">
+            <div class="triggers">
+              <input type="text" class="trigger">
+            </div>
+            <div class="targets">
+              <input type="text" class="target" disabled>
+            </div>          
+          </div>        
+        </div>
+      </section>
+      <section class="template type17">
+        <h3>[type17] input + checkbox</h3>
+        <div class="cont">
+          <div class="element">
+            <div class="triggers">
+              <input type="text" class="trigger">
+            </div>
+            <div class="targets">
+              <input type="checkbox" id="checkbox17" class="target" disabled>
+              <label class="label" for="checkbox17">checkbox</label>
+            </div>          
+          </div>        
+        </div>
+      </section>
+      <section class="template type18">
+        <h3>[type18] input + radio</h3>
+        <div class="cont">
+          <div class="element">
+            <div class="triggers">
+              <input type="text" class="trigger">
+            </div>
+            <div class="targets">
+              <input type="radio" id="radio18_1" name="radio18" class="target" disabled>
+              <label class="label" for="radio18_1">radio 1</label>
+              <input type="radio" id="radio18_2" name="radio18" class="target" disabled>
+              <label class="label" for="radio18_2">radio 2</label>
+            </div>          
+          </div>        
+        </div>
+      </section>
+      <section class="template type19">
+        <h3>[type19] input + select</h3>
+        <div class="cont">
+          <div class="element">
+            <div class="triggers">
+              <input type="text" class="trigger">
+            </div>
+            <div class="targets">
+              <select class="select target" disabled>
+                <option>option 1</option>
+                <option>option 2</option>
+                <option>option 3</option>
+              </select>
+            </div>          
+          </div>        
+        </div>
+      </section>
+      <section class="template type20">
+        <h3>[type20] input + textarea</h3>
+        <div class="cont">
+          <div class="element">
+            <div class="triggers">
+              <input type="text" class="trigger">
+            </div>
+            <div class="targets">
+              <textarea class="target" disabled></textarea>
+            </div>          
+          </div>        
+        </div>
+      </section>
+      <section class="template">
+      </section>
+      <section class="template type21">
+        <h3>[type21] textarea + input</h3>
+        <div class="cont">
+          <div class="element">
+            <div class="triggers">
+              <textarea class="trigger"></textarea>
+            </div>
+            <div class="targets">
+              <input type="text" class="target" disabled>
+            </div>          
+          </div>        
+        </div>
+      </section>
+      <section class="template type22">
+        <h3>[type22] textarea + checkbox</h3>
+        <div class="cont">
+          <div class="element">
+            <div class="triggers">
+              <textarea class="trigger"></textarea>
+            </div>
+            <div class="targets">
+              <input type="checkbox" id="checkbox22" class="target" disabled>
+              <label class="label" for="checkbox22">checkbox</label>
+            </div>          
+          </div>        
+        </div>
+      </section>
+      <section class="template type23">
+        <h3>[type23] textarea + radio</h3>
+        <div class="cont">
+          <div class="element">
+            <div class="triggers">
+              <textarea class="trigger"></textarea>
+            </div>
+            <div class="targets">
+              <input type="radio" id="radio23_1" name="radio23" class="target" disabled>
+              <label class="label" for="radio23_1">radio 1</label>
+              <input type="radio" id="radio23_2" name="radio23" class="target" disabled>
+              <label class="label" for="radio23_2">radio 2</label>
+            </div>          
+          </div>        
+        </div>
+      </section>
+      <section class="template type24">
+        <h3>[type24] textarea + select</h3>
+        <div class="cont">
+          <div class="element">
+            <div class="triggers">
+              <textarea class="trigger"></textarea>
+            </div>
+            <div class="targets">
+              <select class="select target" disabled>
+                <option>option 1</option>
+                <option>option 2</option>
+                <option>option 3</option>
+              </select>
+            </div>          
+          </div>        
+        </div>
+      </section>
+      <section class="template type25">
+        <h3>[type25] textarea + textarea</h3>
+        <div class="cont">
+          <div class="element">
+            <div class="triggers">
+              <textarea class="trigger"></textarea>
+            </div>
+            <div class="targets">
+              <textarea class="target" disabled></textarea>
+            </div>          
+          </div>        
+        </div>
+      </section>
+    </div>
+  </div>
+</body>
+</html>
